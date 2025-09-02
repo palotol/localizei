@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="imagens/logo.ico" type="image/x-icon">
+  <title>Checkout - Localizei</title>
+  <link rel="stylesheet" href="css/checkout_estilo.css">
+</head>
+<body>
+  <div class="top-bar">
+   <img src="imagens/logo.png" class="logo">
+   <span class="site-name">Localizei</span>
+  </div>
+  <header id="header1">
+    <h1>Confirme seu pedido</h1>
+  </header>
+  <main class="conteudo-principal">
+    <h1>Por favor, confirme os dados de seu pedido abaixo:</h1>
+  <div>
+    <h4>Selecione o veículo que deseja retirar:</h4>
+       <select name="Carro" id="selectCarro">
+          <option value="argo">Fiat Argo</option>
+          <option value="corolla">Toyota Corolla</option>
+          <option value="civic">Honda Civic</option>
+          <option value="frontier">Nissan Frontier (Preto)</option>
+          <option value="frontier_azul">Nissan Frontier (Azul)</option>
+          <option value="mobi">Fiat Mobi</option>
+          <option value="hb20">Honda HB20</option>
+          <option value="factor150">Yamaha Factor 150</option>
+          <option value="fz15">Yamaha Fazer FZ15</option>
+          <option value="suzukigsxs750">Suzuki GSX-S 750</option>
+          <option value="hondacg160">Honda CG 160</option>
+       </select>
+  </div>
+  <div>
+    <h4>Escolha a unidade em que deseja retirar:</h4>
+    <select name="Unidade">
+      <option value="Galeão">Aeroporto do Galeão</option>
+      <option value="Irajá">Irajá</option>
+      <option value="Maracanã">Maracanã</option>
+      <option value="Tijuca">Tijuca</option>
+      <option value="Taquara">Taquara</option>
+      <option value="Copacabana">Copacabana</option>
+      <option value="Barra">Barra da Tijuca</option>
+    </select>
+  </div>
+    <div>
+    <h4>Selecione o horário em que deseja retirar:</h4>
+    <select name="horario">
+      <option value="7">7:00 - 8:00</option>
+      <option value="8">8:00 - 9:00</option>
+      <option value="9">9:00 - 10:00</option>
+      <option value="10">10:00 - 11:00</option>
+      <option value="11">11:00 - 12:00</option>
+      <option value="12">12:00 - 13:00</option>
+      <option value="13">13:00 - 14:00</option>
+    </select>
+  </div>
+  <div>
+    <h4>Selecione a data para agendar o veículo:</h4>
+     <input type="date" name="agendamento" id="agenda"/>
+     <br>
+     <button id="confirmarPedidoBtn" type="button">Confirmar Pedido</button>
+     <p id="mensagemConfirmacao" style="display:none; color: green; font-weight: bold; margin-top:10px;">
+       Pedido realizado com sucesso!
+     </p>
+  </div>
+  </main>
+  </div>
+  </main>
+  <footer class="rodape">
+    <p>© 2025 Localizei. Todos os direitos reservados.</p>
+  </footer>
+ <script>
+  const params = new URLSearchParams(window.location.search);
+  const carro = params.get('carro');
+  if (carro) {
+    document.getElementById('selectCarro').value = carro;
+  }
+  document.getElementById('confirmarPedidoBtn').onclick = function() {
+    document.getElementById('mensagemConfirmacao').style.display = 'block';
+  };
+</script>
+</body>
+</html>
